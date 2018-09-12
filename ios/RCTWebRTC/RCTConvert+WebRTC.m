@@ -109,7 +109,7 @@
     config.iceServers = iceServers;
   }
 
-    if (json[@"iceTransportPolicy"] != nil && [json[@"iceTransportPolicy"] isKindOfClass:[NSString class]]) {
+  if (json[@"iceTransportPolicy"] != nil && [json[@"iceTransportPolicy"] isKindOfClass:[NSString class]]) {
     NSString *iceTransportPolicy = json[@"iceTransportPolicy"];
     if ([iceTransportPolicy isEqualToString:@"all"]) {
       config.iceTransportPolicy = RTCIceTransportPolicyAll;
