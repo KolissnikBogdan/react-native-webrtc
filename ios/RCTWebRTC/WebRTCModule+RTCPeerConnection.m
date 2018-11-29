@@ -112,7 +112,7 @@ RCT_EXPORT_METHOD(peerConnectionSendDTMF:(nonnull NSString *)tone objectID:(nonn
   }
 
   RTCRtpSender *sender = peerConnection.senders[0];
-  [sender.dtmfSender.insertDtmf(tones: '1', duration: 0.8, interToneGap: 0.05)];
+  [sender.dtmfSender insertDtmf:tone duration:0.1 interToneGap:0.5];
 }
 
 RCT_EXPORT_METHOD(peerConnectionSetConfiguration:(RTCConfiguration*)configuration objectID:(nonnull NSNumber *)objectID)
