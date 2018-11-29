@@ -111,6 +111,10 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
     this.getStats = RTCUtil.promisify(this.getStats.bind(this));
   }
 
+  sendDTMF(tone) {
+    WebRTCModule.peerConnectionSendDTMF(tone, this._peerConnectionId);
+  }
+
   addStream(stream: MediaStream) {
     WebRTCModule.peerConnectionAddStream(stream.reactTag, this._peerConnectionId);
     this._localStreams.push(stream);
