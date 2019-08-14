@@ -36,6 +36,10 @@ RTC_EXPORT
  */
 - (void)audioSessionDidBeginInterruption:(RTCAudioSession *)session;
 
+- (void)activateAudioUnit;
+
+- (void)deactivateAudioUnit;
+
 /** Called on a system notification thread when AVAudioSession ends an
  *  interruption event.
  */
@@ -110,6 +114,10 @@ RTC_EXPORT
 
 /** Called when the audio session is deactivated outside of the app by iOS. */
 - (void)audioSessionDidDeactivate:(AVAudioSession *)session;
+
+- (void)activateAudioUnit;
+
+- (void)deactivateAudioUnit;
 
 @end
 
