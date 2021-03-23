@@ -18,11 +18,8 @@
 #import <WebRTC/RTCMediaConstraints.h>
 #import <WebRTC/RTCIceCandidate.h>
 #import <WebRTC/RTCSessionDescription.h>
-<<<<<<< HEAD
 #import <WebRTC/RTCStatisticsReport.h>
-=======
 #import <WebRTC/RTCRtpSender.h>
->>>>>>> f820e58 (add sending of dtmf ability)
 
 #import "WebRTCModule.h"
 #import "WebRTCModule+RTCDataChannel.h"
