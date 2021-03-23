@@ -93,6 +93,12 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
         Loggable injectableLogger = null;
         Logging.Severity loggingSeverity = null;
 
+
+        String ENABLE_BIND_USING_INTERFACE_NAME_FIELDTRIAL = "WebRTC-BindUsingInterfaceName/Enabled/";
+
+        String strFieldTrails = "";
+        strFieldTrails += ENABLE_BIND_USING_INTERFACE_NAME_FIELDTRIAL;
+
         if (options != null) {
             adm = options.audioDeviceModule;
             encoderFactory = options.videoEncoderFactory;
@@ -103,6 +109,7 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
 
         PeerConnectionFactory.initialize(
             PeerConnectionFactory.InitializationOptions.builder(reactContext)
+                .setFieldTrials(strFieldTrails)
                 .setInjectableLogger(injectableLogger, loggingSeverity)
                 .createInitializationOptions());
 
