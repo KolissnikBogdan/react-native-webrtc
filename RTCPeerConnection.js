@@ -135,7 +135,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
         RTCUtil.normalizeOfferAnswerOptions(options),
         (successful, data) => {
           if (successful) {
-            resolve(new RTCSessionDescription(data));
+            resolve(data);
           } else {
             reject(data); // TODO: convert to NavigatorUserMediaError
           }
@@ -150,7 +150,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
         RTCUtil.normalizeOfferAnswerOptions(options),
         (successful, data) => {
           if (successful) {
-            resolve(new RTCSessionDescription(data));
+            resolve(data);
           } else {
             reject(data);
           }
