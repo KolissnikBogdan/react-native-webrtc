@@ -57,11 +57,13 @@
 {
   self = [super init];
   if (self) {
+<<<<<<< HEAD
     // Initialize field trial for solving audio issues after hold when using CallKit.
     // See: https://bugs.chromium.org/p/webrtc/issues/detail?id=8126#c35
-    NSDictionary *fieldTrials = @{ @"WebRTC-Audio-iOS-Holding"  : kRTCFieldTrialEnabledValue,
-                                   @"WebRTC-DataChannel-Dcsctp" : @"Enabled"
-                                 };
+    NSDictionary *fieldTrials = @{ @"WebRTC-Audio-iOS-Holding" : kRTCFieldTrialEnabledValue };
+=======
+    NSDictionary *fieldTrials = @{@"WebRTC-DataChannel-Dcsctp": @"Enabled"};
+>>>>>>> master
     RTCInitFieldTrialDictionary(fieldTrials);
 
     if (encoderFactory == nil) {
