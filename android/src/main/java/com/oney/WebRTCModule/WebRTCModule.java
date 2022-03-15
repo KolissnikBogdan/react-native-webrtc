@@ -86,10 +86,6 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
         mPeerConnectionObservers = new SparseArray<>();
         localStreams = new HashMap<>();
 
-        PeerConnectionFactory.initialize(
-                PeerConnectionFactory.InitializationOptions.builder(reactContext)
-                        .createInitializationOptions());
-
         AudioDeviceModule adm = null;
         VideoEncoderFactory encoderFactory = null;
         VideoDecoderFactory decoderFactory = null;
@@ -425,8 +421,6 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
         PeerConnection.RTCConfiguration rtcConfiguration = parseRTCConfiguration(configuration);
 
         try {
-            ThreadUtils.runOnExecutor(() -> peerConnectionInitAsync(rtcConfiguration, id));
-
             ThreadUtils.submitToExecutor(() -> {
                 PeerConnectionObserver observer = new PeerConnectionObserver(this, id);
                 PeerConnection peerConnection = mFactory.createPeerConnection(rtcConfiguration, observer);
@@ -437,17 +431,6 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-
-    private void peerConnectionInitAsync(
-            PeerConnection.RTCConfiguration configuration,
-            int id) {
-        PeerConnectionObserver observer = new PeerConnectionObserver(this,
-                id, configuration.sdpSemantics == PeerConnection.SdpSemantics.UNIFIED_PLAN);
-        PeerConnection peerConnection
-                = mFactory.createPeerConnection(configuration, observer);
-
-        observer.setPeerConnection(peerConnection);
-        mPeerConnectionObservers.put(id, observer);
     }
 
     MediaStream getStreamForReactTag(String streamReactTag) {
@@ -840,7 +823,6 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
                                                    int id,
                                                    Callback callback) {
         ThreadUtils.runOnExecutor(() -> {
-            peerConnectionAddICECandidateAsync(candidateMap, id, callback);
             PeerConnection peerConnection = getPeerConnection(id);
             if (peerConnection == null) {
                 Log.d(TAG, "peerConnectionSetRemoteDescription() peerConnection is null");
