@@ -58,7 +58,7 @@ async function download(url, filePath) {
 
         items.push({
             url,
-            dstFileName: 'WebRTC.xcframework.tgz',
+            dstFileName: 'WebTestRTC.xcframework.tgz',
             dstDir: `${__dirname}/../apple/`
         });
     }

@@ -6,7 +6,7 @@
 
 #import "WebRTCModule+RTCDataChannel.h"
 #import "WebRTCModule+RTCPeerConnection.h"
-#import <WebRTC/RTCDataChannelConfiguration.h>
+#import <WebTestRTC/RTCDataChannelConfiguration.h>
 
 
 @implementation WebRTCModule (RTCDataChannel)

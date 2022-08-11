@@ -7,8 +7,8 @@
 
 #include <mach/mach_time.h>
 
-#import <WebRTC/RTCCVPixelBuffer.h>
-#import <WebRTC/RTCVideoFrameBuffer.h>
+#import <WebTestRTC/RTCCVPixelBuffer.h>
+#import <WebTestRTC/RTCVideoFrameBuffer.h>
 #import <ReplayKit/ReplayKit.h>
 
 #import "ScreenCapturer.h"

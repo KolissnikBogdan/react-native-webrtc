@@ -1,7 +1,7 @@
 
 #import "DataChannelWrapper.h"
 
-#import <WebRTC/RTCDataChannel.h>
+#import <WebTestRTC/RTCDataChannel.h>
 
 @interface DataChannelWrapper () <RTCDataChannelDelegate>
 @end

@@ -10,15 +10,15 @@
 
 #import <React/RCTLog.h>
 #if !TARGET_OS_OSX
-#import <WebRTC/RTCEAGLVideoView.h>
+#import <WebTestRTC/RTCEAGLVideoView.h>
 #endif
-#import <WebRTC/RTCMediaStream.h>
+#import <WebTestRTC/RTCMediaStream.h>
 #if !TARGET_OS_OSX
-#import <WebRTC/RTCMTLVideoView.h>
+#import <WebTestRTC/RTCMTLVideoView.h>
 #else
-#import <WebRTC/RTCMTLNSVideoView.h>
+#import <WebTestRTC/RTCMTLNSVideoView.h>
 #endif
-#import <WebRTC/RTCVideoTrack.h>
+#import <WebTestRTC/RTCVideoTrack.h>
 
 #import "RTCVideoViewManager.h"
 #import "WebRTCModule.h"

@@ -7,9 +7,9 @@
 
 #import <objc/runtime.h>
 
-#import <WebRTC/RTCCameraVideoCapturer.h>
-#import <WebRTC/RTCVideoTrack.h>
-#import <WebRTC/RTCMediaConstraints.h>
+#import <WebTestRTC/RTCCameraVideoCapturer.h>
+#import <WebTestRTC/RTCVideoTrack.h>
+#import <WebTestRTC/RTCMediaConstraints.h>
 
 #import "RTCMediaStreamTrack+React.h"
 #import "WebRTCModule+RTCPeerConnection.h"

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <WebRTC/RTCDataChannel.h>
+#import <WebTestRTC/RTCDataChannel.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
